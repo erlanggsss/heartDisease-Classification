@@ -1,5 +1,5 @@
 # Heart Disease Classification
-The project was carried out to complete the final exam of the machine learning course
+The project was carried out to complete the final exam of the machine learning course.
 
 ## Table of Contents
 - [Description](#description)
@@ -8,7 +8,6 @@ The project was carried out to complete the final exam of the machine learning c
 - [Results](#results)
 - [Directory Structure](#directory-structure)
 - [Contribution](#contribution)
-- [License](#license)
 
 ## Description
 This project uses the `heart.csv` dataset to build a predictive model that can determine the likelihood of a person having heart disease based on various features such as age, gender, blood pressure, cholesterol, and more.
