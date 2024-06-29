@@ -15,64 +15,14 @@ This project uses the `heart.csv` dataset to build a predictive model that can d
 
 ## Requirements
 This project is fully developed and executed in Google Colab. Make sure you have a Google account to access Colab.
+
 ## Usage
 1. Open Google Colab and create a new notebook or open an existing notebook.
 2. Upload the `heart.csv` file to Colab:
-    - Click the folder icon on the left to open the file tab.
+    - Click the folder icon on the left to open the file tab, then upload the `heart-disease-classification file`.
     - Click the upload button and select `heart.csv` from your local directory.
-3. Copy and run the following code in your notebook to start using the dataset:
-
-    ```python
-    import pandas as pd
-
-    # Load dataset
-    df = pd.read_csv('heart.csv')
-
-    # Display the first 5 rows
-    df.head()
-    ```
-
-4. Build and train the classification model:
-    ```python
-    from sklearn.model_selection import train_test_split
-    from sklearn.svm import SVC
-    from sklearn.metrics import accuracy_score, classification_report, roc_curve, auc
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-    # Separate features and target
-    X = df.drop('target', axis=1)
-    y = df['target']
-
-    # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    # Initialize and train the model
-    model = SVC(C=50, gamma=0.1, probability=True, random_state=128)
-    model.fit(X_train, y_train)
-
-    # Predict and evaluate the model
-    y_pred = model.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-
-    print(f'Model accuracy: {accuracy:.2f}')
-    print(classification_report(y_test, y_pred))
-
-    # Plot ROC Curve
-    y_proba = model.predict_proba(X_test)[:, 1]
-    fpr, tpr, _ = roc_curve(y_test, y_proba)
-    roc_auc = auc(fpr, tpr)
-
-    plt.figure()
-    plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.2f})')
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic')
-    plt.legend(loc="lower right")
-    plt.show()
-    ```
-
+    - Run the model program.
+      
 ## Results
 ### Cross Validation Score
 - **Cross Validation Scores:** 0.9372815748257143
@@ -102,6 +52,7 @@ The results of this project show that the SVM model used has excellent performan
 
 ## Directory Structure
 - `heart.csv`: The dataset used for training and evaluating the model
+- `heart_disease_classification.ipynb`: Source code for the classification model
 - `README.md`: This document
 
 ## Contribution
